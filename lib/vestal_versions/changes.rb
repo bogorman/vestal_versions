@@ -29,6 +29,10 @@ module VestalVersions
           changes.append_changes!(backward ? version.changes.reverse_changes : version.changes)
         end
       end
+      
+      def append_version_changes(extra_changes)
+        version_changes.append_changes!(extra_changes)
+      end      
 
       private
         # Before a new version is created, the newly-changed attributes are appended onto a hash
