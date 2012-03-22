@@ -34,7 +34,7 @@ module VestalVersions
       
       def values_at(value)
         to_number = versions.number_at(value)
-        attrs = {}
+        attrs = attributes
         changes_between(version, to_number).each do |attribute, change|
           attrs[attribute] = change.last
         end
