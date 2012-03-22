@@ -31,6 +31,15 @@ module VestalVersions
 
         reset_version(to_number)
       end
+      
+      def values_at(value)
+        to_number = versions.number_at(value)
+        attrs = {}
+        changes_between(version, to_number).each do |attribute, change|
+          attrs[attribute] = change.last
+        end
+        attrs
+      end      
 
       # Behaves similarly to the +revert_to+ method except that it automatically saves the record
       # after the reversion. The return value is the success of the save.
