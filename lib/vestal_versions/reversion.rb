@@ -48,7 +48,7 @@ module VestalVersions
             return change.last
           end
         end
-        attributes[key]
+        attributes[key.to_s]
       end        
 
       # Behaves similarly to the +revert_to+ method except that it automatically saves the record
