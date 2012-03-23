@@ -49,7 +49,11 @@ module VestalVersions
           end
         end
         attributes[key.to_s]
-      end        
+      end     
+      
+      def version_number_at(value)
+        versions.number_at(value)
+      end         
 
       # Behaves similarly to the +revert_to+ method except that it automatically saves the record
       # after the reversion. The return value is the success of the save.
